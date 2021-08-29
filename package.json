@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "lint": "prettier --write '**/*.{js, jsx}'",
+    "lint": "prettier --write '**/*.{js,jsx}'",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
