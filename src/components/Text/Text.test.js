@@ -7,19 +7,19 @@ import Text from './Text';
 let component;
 
 describe('Text component', () => {
-  beforeAll(() => {
-    component = (props) => {
-      return <Text {...props} />;
-    };
-  });
+	beforeAll(() => {
+		component = (props) => {
+			return <Text {...props} />;
+		};
+	});
 
-  it('should render text prop', () => {
-    const props = {
-        text: 'Hello Basic',
-        size: 'm',
-    }
-    const { getByText } = render(component(props));
+	it('should render text prop', () => {
+		const props = {
+			text: 'Hello Basic',
+			size: 'm',
+		};
+		const { getByText } = render(component(props));
 
-    expect(getByText('Hello Basic').textContent).toBeTruthy();
-  });
+		expect(getByText('Hello Basic').textContent).toBeTruthy();
+	});
 });
