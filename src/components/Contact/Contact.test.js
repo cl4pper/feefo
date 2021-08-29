@@ -5,6 +5,10 @@ import { render } from '@testing-library/react';
 import Contact from './Contact';
 
 let component;
+const data = {
+	name: 'John Smith',
+	email: 'john.smith@feefo.com',
+};
 
 describe('Contact component', () => {
 	beforeAll(() => {
@@ -16,9 +20,7 @@ describe('Contact component', () => {
 	describe('should render', () => {
 		const props = {
 			id: 'test',
-			name: 'User Name',
-			email: 'userName@email.com',
-			phone: '110 1112 1113',
+			data: data,
 		};
 
 		it('component', () => {
@@ -33,17 +35,15 @@ describe('Contact component', () => {
 			const wrapper = queryByTestId('test-contact-component-photo');
 			const firstChild = wrapper.firstChild;
 
-			expect(firstChild.textContent).toBe('U');
+			expect(firstChild.textContent).toBe('J');
 		});
 
 		it('contact info', () => {
 			const { queryByTestId } = render(component(props));
 			const wrapper = queryByTestId('test-contact-component-info');
 			const email = wrapper.firstChild;
-			const phone = wrapper.lastChild;
 
-			expect(email.textContent).toBe('userName@email.com');
-			expect(phone.textContent).toBe('110 1112 1113');
+			expect(email.textContent).toBe('john.smith@feefo.com');
 		});
 	});
 });

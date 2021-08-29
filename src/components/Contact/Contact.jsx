@@ -7,20 +7,25 @@ import * as ContactStyles from './Contact.styles';
 import { Text } from '../index';
 
 const Contact = (props) => {
-	const { id, name, email, phone } = props;
+	const { id, data } = props;
+
+	const contact = {
+		name: data.name || '',
+		email: data.email || '',
+	};
 
 	return (
 		<ContactStyles.Wrapper data-testid={`${id}-contact-component`}>
 			<ContactStyles.Photo data-testid={`${id}-contact-component-photo`}>
-				<Text text={name ? name[0] : 'A'} />
+				<Text text={contact.name[0]} />
 			</ContactStyles.Photo>
 			<ContactStyles.Support data-testid={`${id}-contact-component-support`}>
 				<ContactStyles.SupportLabel>
-					<Text bold size="s" text="Support" />
+					<Text bold size="s" text={contact.name} />
 				</ContactStyles.SupportLabel>
 				<ContactStyles.Info data-testid={`${id}-contact-component-info`}>
-					<Text size="s" text={email || 'user@email.com'} />
-					<Text size="s" text={phone || '020 0208 0208'} />
+					<Text size="s" text={contact.email} />
+					<Text size="s" text={'020 0208 0208'} />
 				</ContactStyles.Info>
 			</ContactStyles.Support>
 		</ContactStyles.Wrapper>

@@ -12,12 +12,8 @@ const Text = (props) => {
 		xs: 8,
 	};
 
-	const styleProps = {
-		bold,
-	};
-
 	return (
-		<TextStyles fontSize={fontSize[size || 'm']} {...styleProps}>
+		<TextStyles fontSize={fontSize[size || 'm']} bold={bold}>
 			{text}
 		</TextStyles>
 	);

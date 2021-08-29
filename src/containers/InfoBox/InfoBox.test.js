@@ -5,6 +5,13 @@ import { render } from '@testing-library/react';
 import InfoBox from './InfoBox';
 
 let component;
+const data = {
+	uploads: 8,
+	successfulUploads: 3,
+	linesAttempted: 20,
+	linesSaved: 4,
+	lastUploadDate: 1605001226079,
+};
 
 describe('InfoBox container', () => {
 	beforeAll(() => {
@@ -16,6 +23,7 @@ describe('InfoBox container', () => {
 	describe('should render', () => {
 		const props = {
 			id: 'test',
+			data: data,
 		};
 
 		it('container', () => {
@@ -32,10 +40,18 @@ describe('InfoBox container', () => {
 		});
 
 		it('bottom content', () => {
-			const { queryByTestId } = render(component(props));
+			const { queryByTestId, queryByText } = render(component(props));
 			const bottom = queryByTestId('test-infobox-container-bottom');
+			const statusLabel = queryByText('UPLOAD SUCCESS');
+			const statusValue = queryByText('37.5%');
+			const linesLabel = queryByText('LINES SAVED');
+			const linesValue = queryByText('20%');
 
 			expect(bottom).toBeTruthy();
+			expect(statusLabel).toBeTruthy();
+			expect(statusValue).toBeTruthy();
+			expect(linesLabel).toBeTruthy();
+			expect(linesValue).toBeTruthy();
 		});
 	});
 });
