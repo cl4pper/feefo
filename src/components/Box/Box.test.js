@@ -20,8 +20,8 @@ describe('Box component', () => {
 		};
 
 		const { getByTestId } = render(component(props));
-        const wrapper = getByTestId('test-box-component');
-        const firstChild = wrapper.firstChild;
+		const wrapper = getByTestId('test-box-component');
+		const firstChild = wrapper.firstChild;
 
 		expect(wrapper.childElementCount).toBe(1);
 		expect(firstChild.textContent).toBe('Hello, content');

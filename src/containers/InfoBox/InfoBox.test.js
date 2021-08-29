@@ -18,24 +18,24 @@ describe('InfoBox container', () => {
 			id: 'test',
 		};
 
-        it('container', () => {
-            const { getByTestId } = render(component(props));
-            const wrapper = getByTestId('test-infobox-container');
-            expect(wrapper.childElementCount).toBe(2);
-        });
+		it('container', () => {
+			const { getByTestId } = render(component(props));
+			const wrapper = getByTestId('test-infobox-container');
+			expect(wrapper.childElementCount).toBe(2);
+		});
 
-        it('top content', () => {
-            const { queryByTestId } = render(component(props));
-            const top = queryByTestId('test-infobox-container-top');
+		it('top content', () => {
+			const { queryByTestId } = render(component(props));
+			const top = queryByTestId('test-infobox-container-top');
 
-            expect(top).toBeTruthy();
-        });
+			expect(top).toBeTruthy();
+		});
 
-        it('bottom content', () => {
-            const { queryByTestId } = render(component(props));
-            const bottom = queryByTestId('test-infobox-container-bottom');
+		it('bottom content', () => {
+			const { queryByTestId } = render(component(props));
+			const bottom = queryByTestId('test-infobox-container-bottom');
 
-            expect(bottom).toBeTruthy();
-        });
+			expect(bottom).toBeTruthy();
+		});
 	});
 });

@@ -2,7 +2,7 @@ import React from 'react';
 import { TextStyles } from './Text.styles';
 
 const Text = (props) => {
-	const { text, size, bold, align } = props;
+	const { text, size, bold } = props;
 
 	const fontSize = {
 		xl: 32,
@@ -14,10 +14,13 @@ const Text = (props) => {
 
 	const styleProps = {
 		bold,
-		align
-	}
+	};
 
-	return <TextStyles fontSize={fontSize[size || 'm']} {...styleProps}>{text}</TextStyles>;
+	return (
+		<TextStyles fontSize={fontSize[size || 'm']} {...styleProps}>
+			{text}
+		</TextStyles>
+	);
 };
 
 export default Text;
