@@ -13,6 +13,7 @@ export const Top = styled.div`
 	align-items: center;
 	justify-content: space-between;
 	width: 100%;
+	color: #484446;
 `;
 
 export const TopTitle = styled.div`
@@ -28,6 +29,7 @@ export const UploadIcon = styled.span`
 export const Bottom = styled.div`
 	display: flex;
 	margin-top: 20px;
+	color: #606060;
 `;
 
 export const InfoIcon = styled.span`

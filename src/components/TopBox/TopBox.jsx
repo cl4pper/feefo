@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import * as TopBoxStyles from './TopBox.styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUpload, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
@@ -30,7 +31,9 @@ const Box = (props) => {
 				&nbsp;
 				<Text size="s" bold text={uploads} />
 				&nbsp;
-				<Text size="s" text="uploads and" />
+				<Text bold size="s" text="uploads" />
+				&nbsp;
+				<Text size="s" text="and" />
 				&nbsp;
 				<Text size="s" bold text={lines} />
 				&nbsp;
@@ -38,6 +41,17 @@ const Box = (props) => {
 			</TopBoxStyles.Bottom>
 		</TopBoxStyles.Wrapper>
 	);
+};
+
+Box.propTypes = {
+	id: PropTypes.string,
+	data: PropTypes.shape({
+		uploads: PropTypes.number,
+		successfulUploads: PropTypes.number,
+		linesAttempted: PropTypes.number,
+		linesSaved: PropTypes.number,
+		lastUploadDate: PropTypes.number,
+	}),
 };
 
 export default Box;

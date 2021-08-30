@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { TextStyles } from './Text.styles';
 
 const Text = (props) => {
@@ -17,6 +18,12 @@ const Text = (props) => {
 			{text}
 		</TextStyles>
 	);
+};
+
+Text.propTypes = {
+	text: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	size: PropTypes.string,
+	bold: PropTypes.bool,
 };
 
 export default Text;

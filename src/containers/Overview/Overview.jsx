@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import * as OverviewStyles from './Overview.styles';
 
 // COMPONENTS
@@ -18,6 +19,23 @@ const Overview = (props) => {
 			<InfoBox data={salesInfo} />
 		</OverviewStyles.Wrapper>
 	);
+};
+
+Overview.propTypes = {
+	id: PropTypes.string,
+	data: PropTypes.shape({
+		supportContact: PropTypes.shape({
+			name: PropTypes.string,
+			email: PropTypes.string,
+		}),
+		salesOverview: PropTypes.shape({
+			uploads: PropTypes.number,
+			successfulUploads: PropTypes.number,
+			linesAttempted: PropTypes.number,
+			linesSaved: PropTypes.number,
+			lastUploadDate: PropTypes.number,
+		}),
+	}),
 };
 
 export default Overview;

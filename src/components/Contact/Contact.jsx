@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // STYLES
 import * as ContactStyles from './Contact.styles';
@@ -30,6 +31,14 @@ const Contact = (props) => {
 			</ContactStyles.Support>
 		</ContactStyles.Wrapper>
 	);
+};
+
+Contact.propTypes = {
+	id: PropTypes.string,
+	data: PropTypes.shape({
+		name: PropTypes.string,
+		email: PropTypes.string,
+	}),
 };
 
 export default Contact;

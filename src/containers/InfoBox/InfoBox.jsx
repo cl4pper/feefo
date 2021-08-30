@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // STYLES
 import * as InfoBoxStyles from './InfoBox.styles';
@@ -41,6 +42,17 @@ const InfoBox = (props) => {
 			</InfoBoxStyles.Bottom>
 		</InfoBoxStyles.Wrapper>
 	);
+};
+
+InfoBox.propTypes = {
+	id: PropTypes.string,
+	data: PropTypes.shape({
+		uploads: PropTypes.number,
+		successfulUploads: PropTypes.number,
+		linesAttempted: PropTypes.number,
+		linesSaved: PropTypes.number,
+		lastUploadDate: PropTypes.number,
+	}),
 };
 
 export default InfoBox;

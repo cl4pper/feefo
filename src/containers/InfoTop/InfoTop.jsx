@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import * as InfoTopStyles from './InfoTop.styles';
 
 // COMPONENTS
@@ -18,6 +19,14 @@ const InfoTop = (props) => {
 			</InfoTopStyles.Bottom>
 		</InfoTopStyles.Wrapper>
 	);
+};
+
+InfoTop.propTypes = {
+	id: PropTypes.string,
+	data: PropTypes.shape({
+		name: PropTypes.string,
+		email: PropTypes.string,
+	}),
 };
 
 export default InfoTop;

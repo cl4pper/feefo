@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // STYLES
 import * as StatusStyles from './Status.styles';
@@ -21,6 +22,11 @@ const Status = (props) => {
 			</StatusStyles.Label>
 		</StatusStyles.Wrapper>
 	);
+};
+
+Status.propTypes = {
+	id: PropTypes.string,
+	label: PropTypes.string,
 };
 
 export default Status;
