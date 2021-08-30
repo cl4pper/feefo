@@ -33,3 +33,9 @@ export const Info = styled.div`
 	grid-template-columns: auto auto;
 	grid-gap: 16px;
 `;
+
+export const Email = styled.div`
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-gap: 8px;
+`;

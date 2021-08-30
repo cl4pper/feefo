@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 // STYLES
 import * as ContactStyles from './Contact.styles';
@@ -25,7 +27,10 @@ const Contact = (props) => {
 					<Text bold size="s" text={contact.name} />
 				</ContactStyles.SupportLabel>
 				<ContactStyles.Info data-testid={`${id}-contact-component-info`}>
-					<Text size="s" text={contact.email} />
+					<ContactStyles.Email>
+						<FontAwesomeIcon icon={faEnvelope} />
+						<Text size="s" text={contact.email} />
+					</ContactStyles.Email>
 					<Text size="s" text={'020 0208 0208'} />
 				</ContactStyles.Info>
 			</ContactStyles.Support>

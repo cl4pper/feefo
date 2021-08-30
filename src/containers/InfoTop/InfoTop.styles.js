@@ -2,19 +2,26 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
 	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: #484446;
+
+	@media (max-width: 500px) {
+		display: grid;
+		grid-template-columns: 100%;
+		grid-template-rows: auto auto;
+		grid-gap: 20px;
+		padding: 0 16px;
+	}
+`;
+
+export const Title = styled.div`
+	color: #9b9898;
+`;
+
+export const Right = styled.div`
 	display: grid;
 	grid-template-rows: auto auto;
-	color: #484446;
-`;
-
-export const Top = styled.div`
-	text-align: right;
-	color: #606060;
-	margin-bottom: 8px;
-`;
-
-export const Bottom = styled.div`
-	display: flex;
-	align-items: flex-start;
-	justify-content: space-between;
+	grid-gap: 10px;
 `;

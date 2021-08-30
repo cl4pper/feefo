@@ -6,8 +6,8 @@ import InfoTop from './InfoTop';
 
 let component;
 const data = {
-	name: 'John Smith',
-	email: 'john.smith@feefo.com',
+	name: 'Elton John',
+	email: 'sireltonjohn@feefo.com',
 };
 
 describe('InfoTop container', () => {
@@ -29,18 +29,24 @@ describe('InfoTop container', () => {
 			expect(wrapper.childElementCount).toBe(2);
 		});
 
-		it('top content', () => {
-			const { queryByTestId } = render(component(props));
-			const top = queryByTestId('test-infotop-container-top');
+		it('top title', () => {
+			const { queryByText } = render(component(props));
+			const title = queryByText('Account Overview');
 
-			expect(top).toBeTruthy();
+			expect(title).toBeTruthy();
 		});
 
-		it('bottom content', () => {
-			const { queryByTestId } = render(component(props));
-			const bottom = queryByTestId('test-infotop-container-bottom');
+		it('right content', () => {
+			const { queryByTestId, queryByText } = render(component(props));
+			const right = queryByTestId('test-infotop-container-right');
+			const title = queryByText('YOUR FEEFO SUPPORT CONTACT');
+			const name = queryByText('Elton John');
+			const email = queryByText('sireltonjohn@feefo.com');
 
-			expect(bottom).toBeTruthy();
+			expect(right).toBeTruthy();
+			expect(title).toBeTruthy();
+			expect(name).toBeTruthy();
+			expect(email).toBeTruthy();
 		});
 	});
 });

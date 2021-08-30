@@ -5,7 +5,7 @@ import { Overview } from './containers';
 export const AccountOverview = ({ data }) => {
 	console.log(data);
 
-	return <Overview data={data} />
+	return <Overview data={data} />;
 };
 
 export default AccountOverview;

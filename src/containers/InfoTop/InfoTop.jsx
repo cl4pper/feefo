@@ -10,13 +10,13 @@ const InfoTop = (props) => {
 
 	return (
 		<InfoTopStyles.Wrapper data-testid={`${id}-infotop-container`}>
-			<InfoTopStyles.Top data-testid={`${id}-infotop-container-top`}>
-				<Text bold size="s" text="YOUR FEEFO SUPPORT CONTACT" />
-			</InfoTopStyles.Top>
-			<InfoTopStyles.Bottom data-testid={`${id}-infotop-container-bottom`}>
-				<Text align="right" size="l" text="Account Overview" />
+			<Text align="right" size="l" text="Account Overview" />
+			<InfoTopStyles.Right data-testid={`${id}-infotop-container-right`}>
+				<InfoTopStyles.Title>
+					<Text bold size="s" text="YOUR FEEFO SUPPORT CONTACT" />
+				</InfoTopStyles.Title>
 				<Contact data={data} />
-			</InfoTopStyles.Bottom>
+			</InfoTopStyles.Right>
 		</InfoTopStyles.Wrapper>
 	);
 };
