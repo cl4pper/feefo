@@ -7,5 +7,5 @@ export const Wrapper = styled.div`
 
 export const Header = styled.div`
 	padding-top: 16px;
-	padding-bottom: 24px;
+	padding-bottom: 40px;
 `;
